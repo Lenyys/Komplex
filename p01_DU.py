@@ -19,7 +19,7 @@ class ComplexNumber:
     def __eq__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return self._real == other and self._imag == 0
-        if self._real == other._real and self._imag == other._imag:
+        if self._real == other.real and self._imag == other.imag:
             return True
         return False
 
@@ -67,15 +67,15 @@ class ComplexNumber:
     def add(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return ComplexNumber(self._real + other, self._imag)
-        real_result = self._real + other._real
-        imag_result = self._imag + other._imag
+        real_result = self._real + other.real
+        imag_result = self._imag + other.imag
         return ComplexNumber(real_result, imag_result)
 
     def subtract(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return ComplexNumber(self._real - other, self._imag)
-        real_result = self._real - other._real
-        imag_result = self._imag - other._imag
+        real_result = self._real - other.real
+        imag_result = self._imag - other.imag
         return ComplexNumber(real_result, imag_result)
 
     def multiply(self, other):
@@ -83,8 +83,8 @@ class ComplexNumber:
             real_result = (self._real * other)
             imag_result = (self._imag * other)
             return ComplexNumber(real_result, imag_result)
-        real_result = (self._real * other._real) - (self._imag * other._imag)
-        imag_result = (self._real * other._imag) + (self._imag * other._real)
+        real_result = (self._real * other.real) - (self._imag * other.imag)
+        imag_result = (self._real * other.imag) + (self._imag * other.real)
         return ComplexNumber(real_result, imag_result)
 
     def divide(self, other):
@@ -94,11 +94,11 @@ class ComplexNumber:
             real_result = self._real / other
             imag_result = self.imag / other
             return ComplexNumber(real_result, imag_result)
-        denominator = other._real**2 + other._imag**2
+        denominator = other.real**2 + other.imag**2
         if denominator == 0:
             raise ZeroDivisionError
-        real_result = (self._real * other._real + self._imag * other._imag) / denominator
-        imag_result = (self._imag * other._real - self._real * other._imag) / denominator
+        real_result = (self._real * other.real + self._imag * other.imag) / denominator
+        imag_result = (self._imag * other.real - self._real * other.imag) / denominator
         return ComplexNumber(real_result, imag_result)
 
     def conjugate(self):
