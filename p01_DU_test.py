@@ -87,3 +87,5 @@ class Test:
         assert ComplexNumber(2, 4).divide(ComplexNumber(0, 4)) == ComplexNumber(1, -0.5)
         assert ComplexNumber(8, 4).divide(2) == ComplexNumber(4, 2)
         assert ComplexNumber(10, 5).divide(2.5) == ComplexNumber(4, 2)
+
+
