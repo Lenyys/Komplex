@@ -37,7 +37,7 @@ class ComplexNumber:
 
     def __gt__(self, other):
         if isinstance(other, int) or isinstance(other, float):
-            return self.absolute_value() < ComplexNumber(other, 0).absolute_value()
+            return self.absolute_value() > ComplexNumber(other, 0).absolute_value()
         if self.absolute_value() > other.absolute_value():
             return True
         return False
@@ -106,5 +106,5 @@ class ComplexNumber:
 
 
 if __name__ == "__main__":
-    komplex = ComplexNumber("ctyri", 9)
+    komplex = ComplexNumber(4, 9)
     print(komplex)
