@@ -39,7 +39,7 @@ class Test:
         assert (ComplexNumber(3, -5) > ComplexNumber(-2, 4)) is True
         assert (2.5 < ComplexNumber(3, -5)) is True
         assert (5 < ComplexNumber(3, -5)) is True
-        assert (10 < ComplexNumber(3, -5) ) is False
+        assert (10 < ComplexNumber(3, -5)) is False
         assert (10.3 < ComplexNumber(3, -5)) is False
 
     def test_addition(self):
@@ -63,7 +63,6 @@ class Test:
     def test_absolute_value(self):
         assert ComplexNumber(0, 5).absolute_value() == 5
         assert ComplexNumber(-6, 0).absolute_value() == 6
-
 
     def test_subtraction(self):
         assert ComplexNumber(2, 4).subtract(ComplexNumber(1, 3)) == ComplexNumber(1, 1)
